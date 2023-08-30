@@ -4,3 +4,5 @@ const removeSpaces = (str) => {
 		.filter((s) => s)
 		.join(' ');
 };
+
+export { removeSpaces };
