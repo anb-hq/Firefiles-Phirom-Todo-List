@@ -14,6 +14,13 @@ const taskStore = (set) => ({
 			tasks: state.tasks.filter((task) => task.id !== taskId),
 		}));
 	},
+	handleToggleTaskStatus: (taskId) => {
+		set((state) => ({
+			tasks: state.tasks.map((task) =>
+				task.id === taskId ? { ...task, completed: !task.completed } : task
+			),
+		}));
+	},
 });
 
 /* 
