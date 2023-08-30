@@ -21,7 +21,7 @@ const AddTaskForm = () => {
 		onAddTask({
 			id: Date.now(),
 			description: removeSpaces(description),
-			complete: false,
+			completed: false,
 		});
 
 		setDescription('');
