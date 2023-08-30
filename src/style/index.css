@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
+
+:root {
+	/* COLORS */
+	--color-lightest-gray: #f8f9fa;
+	--color-light-gray: #e9ecef;
+	--color-cool-gray: #adb5bd;
+	--color-medium-gray: #6c757d;
+	--color-dark-gray: #354052;
+	--color-soft-blue: #8eb8e5;
+	--color-crimson-red: #d64550;
+
+	/* TYPOGRAPHY */
+	/* Font Weight */
+	--font-weight-2: 600;
+	--font-weight-3: 700;
+}
+
+/* Font Sizes */
+.font--size-1 {
+	font-size: 0.75rem;
+}
+
+.font--size-2 {
+	font-size: 0.625rem;
+}
+
+.font--size-title {
+	font-size: 1rem;
+}
+
+/* Font Color */
+.font--light-gray {
+	color: var(--color-lightest-gray);
+}
+
+.font--gray {
+	color: var(--color-medium-gray);
+}
+
+/* Icon Color */
+.icon--light-gray {
+	color: var(--color-lightest-gray);
+}
+
+.icon--cool-gray {
+	color: var(--color-cool-gray);
+}
+
+.icon--gray {
+	color: var(--color-medium-gray);
+}
+
+.icon--red {
+	color: var(--color-crimson-red);
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+}
+
+i {
+	font-size: 0.875rem;
+}
+
+@media screen and (min-width: 430px) {
+	/* Font Sizes */
+	.font--size-1 {
+		font-size: 0.875rem;
+	}
+
+	.font--size-2 {
+		font-size: 0.75rem;
+	}
+
+	.font--size-title {
+		font-size: 2rem;
+	}
+
+	i {
+		font-size: 1.25rem;
+	}
+}
