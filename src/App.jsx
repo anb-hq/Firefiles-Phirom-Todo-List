@@ -1,5 +1,7 @@
 import { InputForm } from './components/InputForm';
 
+import { Tasks } from './components/Tasks';
+
 import './style/reset.css';
 
 import './style/index.css';
@@ -10,6 +12,7 @@ const App = () => {
 	return (
 		<>
 			<InputForm />
+			<Tasks />
 		</>
 	);
 };
