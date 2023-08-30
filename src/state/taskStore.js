@@ -9,6 +9,11 @@ const taskStore = (set) => ({
 			tasks: [task, ...state.tasks],
 		}));
 	},
+	handleDeleteTask: (taskId) => {
+		set((state) => ({
+			tasks: state.tasks.filter((task) => task.id !== taskId),
+		}));
+	},
 });
 
 /* 
