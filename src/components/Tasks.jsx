@@ -2,6 +2,8 @@ import { useTaskStore } from '../state/taskStore';
 
 import { List } from './List';
 
+import '../style/Tasks.css'
+
 const Tasks = () => {
 	const tasks = useTaskStore((state) => state.tasks);
 

@@ -1,0 +1,33 @@
+.add-task-form {
+	width: 100%;
+	border: 1px solid rgba(173, 181, 189, 0.2);
+	border-radius: 100px;
+	overflow: hidden;
+	padding: 0.25rem;
+	background-color: var(--color-light-gray);
+	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.add-task-form input {
+	padding: 0 0.75rem;
+	flex-grow: 1;
+	background-color: var(--color-light-gray);
+	border: none;
+	outline: none;
+}
+
+.input-btn {
+	padding: 0.375rem;
+	border-radius: 100px;
+	background-color: var(--color-cool-gray);
+	border: none;
+	outline: none;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

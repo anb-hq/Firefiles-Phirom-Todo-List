@@ -4,6 +4,8 @@ import { useTaskStore } from '../state/taskStore';
 
 import { removeSpaces } from '../util/helper';
 
+import '../style/InputForm.css'
+
 const InputForm = () => {
 	return <AddTaskForm />;
 };

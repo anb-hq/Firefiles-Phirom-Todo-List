@@ -6,6 +6,8 @@ import '../style/index.css';
 
 import '../style/reset.css';
 
+import '../style/List.css'
+
 const List = ({ task, checkIconColor }) => {
 	const { onDeleteTask, onToggleTaskStatus, onSaveEdit } = useTaskStore(
 		(state) => ({
