@@ -17,8 +17,30 @@ const Tasks = () => {
 
 	return (
 		<>
+			<h3>Pending</h3>
 			<ul>
-				{tasks.map((task) => (
+				{tasks.filter(task => !task.completed).map((task) => (
+					<li key={task.id}>
+						<span>
+							<i
+								className={`ti ti-circle${task.completed ? '-check' : ''}`}
+								onClick={() => handleToggleTaskStatus(task.id)}
+							></i>
+						</span>
+						<span>{task.description}</span>{' '}
+						<span
+							onClick={() => {
+								handleDeleteTask(task.id);
+							}}
+						>
+							<i className="ti ti-circle-x"></i>
+						</span>
+					</li>
+				))}
+			</ul>
+			<h3>Completed</h3>
+			<ul>
+				{tasks.filter(task => task.completed).map((task) => (
 					<li key={task.id}>
 						<span>
 							<i
