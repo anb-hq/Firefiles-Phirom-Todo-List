@@ -10,10 +10,11 @@ import './style/App.css';
 
 const App = () => {
 	return (
-		<>
+		<div className="app">
+			<h1 id='title' className='font--gray'>📝 Minimal Todo</h1>
 			<InputForm />
 			<Tasks />
-		</>
+		</div>
 	);
 };
 

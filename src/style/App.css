@@ -1,0 +1,39 @@
+body {
+	max-width: 1440px;
+	min-width: 320px;
+	min-height: 100vh;
+	background-color: var(--color-dark-gray);
+	margin: 0 auto;
+}
+
+.app {
+	margin: 0 auto;
+	max-width: 800px;
+	min-height: 100vh;
+	background-color: var(--color-lightest-gray);
+	padding: 1rem 0.5rem;
+	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+	border-radius: 12px;
+}
+
+/* title */
+#title {
+	text-align: center;
+	font-size: 1.75rem;
+	margin-bottom: 1.5rem;
+	text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+
+@media screen and (min-width: 430px) {
+	.app {
+		padding: 1.5rem;
+    margin: 2rem auto;
+    min-height: 80vh;
+	}
+
+	#title {
+		font-size: 2rem;
+		text-align: left;
+	}
+}
