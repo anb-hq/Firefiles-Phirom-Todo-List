@@ -7,20 +7,20 @@ const Tasks = () => {
 
 	return (
 		<>
-			<h3>Pending</h3>
+			<h3 className="font--gray">Pending</h3>
 			<ul>
 				{tasks
 					.filter((task) => !task.completed)
 					.map((task) => (
-						<List key={task.id} task={task} />
+						<List key={task.id} task={task} checkIconColor="icon--cool-gray" />
 					))}
 			</ul>
-			<h3>Completed</h3>
+			<h3 className="font--gray">Completed</h3>
 			<ul>
 				{tasks
 					.filter((task) => task.completed)
 					.map((task) => (
-						<List key={task.id} task={task} />
+						<List key={task.id} task={task} checkIconColor="icon--gray" />
 					))}
 			</ul>
 		</>

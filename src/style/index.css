@@ -27,6 +27,10 @@
 	color: var(--color-medium-gray);
 }
 
+.font--dark-gray {
+	color: var(--color-dark-gray);
+}
+
 /* Icon Color */
 .icon--light-gray {
 	color: var(--color-lightest-gray);
@@ -51,10 +55,4 @@ body {
 
 i {
 	font-size: 1.75rem;
-}
-
-@media screen and (min-width: 430px) {
-	i {
-		font-size: 1.5rem;
-	}
 }

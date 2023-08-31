@@ -29,13 +29,15 @@ const AddTaskForm = () => {
 
 	return (
 		<>
-			<form onSubmit={(e) => handleTaskSubmit(e)}>
+			<form className='add-task-form' onSubmit={(e) => handleTaskSubmit(e)}>
 				<input
+					className='font--dark-gray'
+					placeholder='New task...'
 					value={description}
 					onChange={(e) => setDescription(e.target.value)}
 				/>
-				<button>
-					<i className="ti ti-plus"></i>
+				<button className='input-btn'>
+					<i className="ti ti-plus font--light-gray"></i>
 				</button>
 			</form>
 		</>
