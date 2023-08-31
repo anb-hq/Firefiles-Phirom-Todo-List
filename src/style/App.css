@@ -2,7 +2,7 @@ body {
 	max-width: 1440px;
 	min-width: 320px;
 	min-height: 100vh;
-
+	background-color: var(--color-dark-gray);
 	margin: 0 auto;
 }
 
@@ -12,6 +12,8 @@ body {
 	min-height: 100vh;
 	background-color: var(--color-lightest-gray);
 	padding: 1rem 0.5rem;
+	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+	border-radius: 12px;
 }
 
 /* title */
@@ -39,6 +41,7 @@ body {
 
 .add-task-form input {
 	padding: 0 0.75rem;
+	flex-grow: 1;
 	background-color: var(--color-light-gray);
 	border: none;
 	outline: none;
@@ -73,7 +76,10 @@ h3 {
 
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+}
+
+.task-item span:has(i) {
+	margin-top: 0.625rem;
 }
 
 .task-item.completed {
@@ -87,6 +93,7 @@ h3 {
 .description {
 	flex-grow: 1;
 	padding: 0.75rem 0;
+  word-break: break-all;
 }
 
 .delete {
@@ -98,19 +105,21 @@ h3 {
 	width: 100%;
 	border: none;
 	outline: none;
-  font-size: 1.125rem;
-  padding: 0.75rem 0;
-  background-color: inherit;
+	font-size: 1.125rem;
+	padding: 0.75rem 0;
+	background-color: inherit;
 }
 
 @media screen and (min-width: 430px) {
+	.app {
+		padding: 1.5rem;
+    margin: 2rem auto;
+    min-height: 80vh;
+	}
+
 	#title {
 		font-size: 2rem;
 		text-align: left;
-	}
-
-	.app {
-		padding: 1.5rem;
 	}
 
 	h3 {
