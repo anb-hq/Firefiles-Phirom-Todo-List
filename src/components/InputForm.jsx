@@ -9,7 +9,7 @@ const InputForm = () => {
 };
 
 const AddTaskForm = () => {
-	const onAddTask = useTaskStore((state) => state.handleAddTask);
+	const onAddTask = useTaskStore((state) => state.addTask);
 
 	const [description, setDescription] = useState('');
 

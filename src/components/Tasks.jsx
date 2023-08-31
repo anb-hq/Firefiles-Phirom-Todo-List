@@ -3,15 +3,15 @@ import { useTaskStore } from '../state/taskStore';
 const Tasks = () => {
 	const { tasks, onDeleteTask, onToggleTaskStatus } = useTaskStore((state) => ({
 		tasks: state.tasks,
-		onDeleteTask: state.handleDeleteTask,
-		onToggleTaskStatus: state.handleToggleTaskStatus,
+		onDeleteTask: state.deleteTask,
+		onToggleTaskStatus: state.toggleTaskStatus,
 	}));
 
-	const handleClickDeleteTask = (taskId) => {
+	const handleDeleteTask = (taskId) => {
 		onDeleteTask(taskId);
 	};
 
-	const handleToggleStatus = (taskId) => {
+	const handleToggleTaskStatus = (taskId) => {
 		onToggleTaskStatus(taskId);
 	};
 
@@ -23,13 +23,13 @@ const Tasks = () => {
 						<span>
 							<i
 								className={`ti ti-circle${task.completed ? '-check' : ''}`}
-								onClick={() => handleToggleStatus(task.id)}
+								onClick={() => handleToggleTaskStatus(task.id)}
 							></i>
 						</span>
 						<span>{task.description}</span>{' '}
 						<span
 							onClick={() => {
-								handleClickDeleteTask(task.id);
+								handleDeleteTask(task.id);
 							}}
 						>
 							<i className="ti ti-circle-x"></i>

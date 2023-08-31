@@ -4,17 +4,17 @@ import { devtools, persist } from 'zustand/middleware';
 
 const taskStore = (set) => ({
 	tasks: [],
-	handleAddTask: (task) => {
+	addTask: (task) => {
 		set((state) => ({
 			tasks: [task, ...state.tasks],
 		}));
 	},
-	handleDeleteTask: (taskId) => {
+	deleteTask: (taskId) => {
 		set((state) => ({
 			tasks: state.tasks.filter((task) => task.id !== taskId),
 		}));
 	},
-	handleToggleTaskStatus: (taskId) => {
+	toggleTaskStatus: (taskId) => {
 		set((state) => ({
 			tasks: state.tasks.map((task) =>
 				task.id === taskId ? { ...task, completed: !task.completed } : task
