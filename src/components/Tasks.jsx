@@ -1,63 +1,27 @@
 import { useTaskStore } from '../state/taskStore';
 
+import { List } from './List';
+
 const Tasks = () => {
-	const { tasks, onDeleteTask, onToggleTaskStatus } = useTaskStore((state) => ({
-		tasks: state.tasks,
-		onDeleteTask: state.deleteTask,
-		onToggleTaskStatus: state.toggleTaskStatus,
-	}));
-
-	const handleDeleteTask = (taskId) => {
-		onDeleteTask(taskId);
-	};
-
-	const handleToggleTaskStatus = (taskId) => {
-		onToggleTaskStatus(taskId);
-	};
+	const tasks = useTaskStore((state) => state.tasks);
 
 	return (
 		<>
 			<h3>Pending</h3>
 			<ul>
-				{tasks.filter(task => !task.completed).map((task) => (
-					<li key={task.id}>
-						<span>
-							<i
-								className={`ti ti-circle${task.completed ? '-check' : ''}`}
-								onClick={() => handleToggleTaskStatus(task.id)}
-							></i>
-						</span>
-						<span>{task.description}</span>{' '}
-						<span
-							onClick={() => {
-								handleDeleteTask(task.id);
-							}}
-						>
-							<i className="ti ti-circle-x"></i>
-						</span>
-					</li>
-				))}
+				{tasks
+					.filter((task) => !task.completed)
+					.map((task) => (
+						<List key={task.id} task={task} />
+					))}
 			</ul>
 			<h3>Completed</h3>
 			<ul>
-				{tasks.filter(task => task.completed).map((task) => (
-					<li key={task.id}>
-						<span>
-							<i
-								className={`ti ti-circle${task.completed ? '-check' : ''}`}
-								onClick={() => handleToggleTaskStatus(task.id)}
-							></i>
-						</span>
-						<span>{task.description}</span>{' '}
-						<span
-							onClick={() => {
-								handleDeleteTask(task.id);
-							}}
-						>
-							<i className="ti ti-circle-x"></i>
-						</span>
-					</li>
-				))}
+				{tasks
+					.filter((task) => task.completed)
+					.map((task) => (
+						<List key={task.id} task={task} />
+					))}
 			</ul>
 		</>
 	);

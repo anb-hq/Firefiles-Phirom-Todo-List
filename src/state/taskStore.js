@@ -2,6 +2,8 @@ import { create } from 'zustand';
 
 import { devtools, persist } from 'zustand/middleware';
 
+import { removeSpaces } from '../util/helper';
+
 const taskStore = (set) => ({
 	tasks: [],
 	addTask: (task) => {
@@ -18,6 +20,15 @@ const taskStore = (set) => ({
 		set((state) => ({
 			tasks: state.tasks.map((task) =>
 				task.id === taskId ? { ...task, completed: !task.completed } : task
+			),
+		}));
+	},
+	saveEdit: (taskId, newDescription) => {
+		set((state) => ({
+			tasks: state.tasks.map((task) =>
+				task.id === taskId
+					? { ...task, description: removeSpaces(newDescription) }
+					: task
 			),
 		}));
 	},
