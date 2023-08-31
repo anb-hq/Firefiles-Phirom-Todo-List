@@ -12,7 +12,7 @@ const Tasks = () => {
 				{tasks
 					.filter((task) => !task.completed)
 					.map((task) => (
-						<List task={task} />
+						<List key={task.id} task={task} />
 					))}
 			</ul>
 			<h3>Completed</h3>
@@ -20,7 +20,7 @@ const Tasks = () => {
 				{tasks
 					.filter((task) => task.completed)
 					.map((task) => (
-						<List task={task} />
+						<List key={task.id} task={task} />
 					))}
 			</ul>
 		</>
