@@ -9,7 +9,7 @@ const InputForm = () => {
 };
 
 const AddTaskForm = () => {
-	const onAddTask = useTaskStore((state) => state.handleAddTask);
+	const onAddTask = useTaskStore((state) => state.addTask);
 
 	const [description, setDescription] = useState('');
 
@@ -21,7 +21,7 @@ const AddTaskForm = () => {
 		onAddTask({
 			id: Date.now(),
 			description: removeSpaces(description),
-			complete: false,
+			completed: false,
 		});
 
 		setDescription('');
