@@ -51,10 +51,18 @@ const List = ({ task }) => {
 					onChange={(e) => {
 						setEditedDescription(e.target.value);
 					}}
-					onBlur={() => handleSaveEdit(task.id, editedDescription)}
+					onBlur={() =>
+						handleSaveEdit(
+							task.id,
+							!editedDescription ? task.description : editedDescription
+						)
+					}
 					onKeyDown={(e) => {
 						if (e.key === 'Enter') {
-							handleSaveEdit(task.id, editedDescription);
+							handleSaveEdit(
+								task.id,
+								!editedDescription ? task.description : editedDescription
+							);
 						}
 					}}
 				/>
