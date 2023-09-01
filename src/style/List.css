@@ -19,7 +19,7 @@
 	background-color: var(--color-cool-gray);
 }
 
-.task-item.completed .task0-item__description {
+.task-item.completed .task-item__description {
 	text-decoration: line-through;
 }
 
