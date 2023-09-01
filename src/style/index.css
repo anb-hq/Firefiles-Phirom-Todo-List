@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+	/* COLORS */
+	--color-lightest-gray: #f8f9fa;
+	--color-light-gray: #e9ecef;
+	--color-cool-gray: #adb5bd;
+	--color-medium-gray: #6c757d;
+	--color-dark-gray: #354052;
+	--color-soft-blue: #8eb8e5;
+	--color-crimson-red: #d64550;
+
+	/* TYPOGRAPHY */
+	/* Font Weight */
+	--font-weight-1: 400;
+	--font-weight-2: 500;
+	--font-weight-3: 600;
+	--font-weight-4: 700;
+}
+
+/* Font Color */
+.font--light-gray {
+	color: var(--color-lightest-gray);
+}
+
+.font--gray {
+	color: var(--color-medium-gray);
+}
+
+.font--dark-gray {
+	color: var(--color-dark-gray);
+}
+
+/* Icon Color */
+.icon--light-gray {
+	color: var(--color-lightest-gray);
+}
+
+.icon--cool-gray {
+	color: var(--color-cool-gray);
+}
+
+.icon--gray {
+	color: var(--color-medium-gray);
+}
+
+.icon--red {
+	color: var(--color-crimson-red);
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	font-size: 1.125rem;
+}
+
+i {
+	font-size: 1.75rem;
+}

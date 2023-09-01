@@ -1,5 +1,25 @@
 <h1 style="font-size: 4rem; text-align: center;">Project Convention Guide</h1>
 
+# Project Setup
+
+If you dont have Node.JS instal Node.JS before setting up the project
+[nodejs.org/en](https://nodejs.org/en)
+
+- Run the command below, then follow the prompt :
+
+      $ npm create vite@latest
+
+- After finish creating react project environment run the command below :
+
+      $ npm install
+
+  This will install all the necessary node package to be able to build the react web application.
+
+- Since this project using state management library called `zustand`, it is important to install
+  zustand package. run the command below:
+
+      $ npm install zustand
+
 # Linting
 
 Use a linting tool like ESLint to enforce coding standards and catch common errors in your code. ESLint can be configured with rules to ensure consistent formatting, code style, and best practices.
@@ -40,9 +60,10 @@ Ensure that the comments are meaningful and provide context where necessary, esp
   |-- doc
   |-- public/
   |-- src/
-      |-- assets/
       |-- components/
       |-- state/
+			|-- style/
+			|-- util
       |-- index.js
       |-- App.js // Main application component
       |-- main.js // Entry point
@@ -52,10 +73,11 @@ Ensure that the comments are meaningful and provide context where necessary, esp
 - `doc` : Stores project's documentation
 - `public` : Contains static assets like HTML, images, and other files. i.e: `favicon`.
 - `src` : Houses the main source code of the application.
-- `assets` : Stores images, fonts...
 - `components` : This is where the React components will reside.
-- `state` : State management related files
-- `README.md` : Contains information about the project
+- `state` : State management related files.
+- `style` : Store all the component css files.
+- `util` : Store helper functions.
+- `README.md` : Contains information about the project.
 
 <br>
 <br>
@@ -69,14 +91,18 @@ Ensure that the component name matches the file name and follows consistent casi
 ```bash
   // ❌ Incorrect naming
   components/
-  |-- MyComponent.jsx
+  |-- mycomponent.jsx
+
+	style/
   |-- my-component.css
 
   // ✅ Correct naming
   components/
-  |-- MyComponent/
-  |   |-- MyComponent.jsx
-  |   |-- MyComponent.css
+  |-- component/
+      |-- MyComponent.jsx
+
+	style/
+      |-- MyComponent.css
 ```
 
 <br>
@@ -86,11 +112,11 @@ Ensure that the component name matches the file name and follows consistent casi
 Group imports from the same library or module to improve organization and readability.
 
 ```js
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-import { Tab, TabList, TabPanel } from "react-tabs";
-import { FaUser, FaCog } from "react-icons/fa";
+import { Tab, TabList, TabPanel } from 'react-tabs';
+import { FaUser, FaCog } from 'react-icons/fa';
 ```
 
 <br>
@@ -185,10 +211,10 @@ export { MyComponent };
 
 ```js
 // 1. Imports - Prefer destructuring imports to minimize writen code
-import React, { PropsWithChildren, useState, useEffect } from "react";
+import React, { PropsWithChildren, useState, useEffect } from 'react';
 
 // 2. Additional variables
-const SOME_CONSTANT = "something";
+const SOME_CONSTANT = 'something';
 
 // 3. Component
 function Component({ someProperty }: PropsWithChildren<ComponentProps>) {
@@ -296,7 +322,7 @@ function App() {
 		</div>
 	);
 
-	import React from "react";
+	import React from 'react';
 
 	function Card({ children }) {
 		return <div className="card">{children}</div>;
@@ -340,7 +366,7 @@ function App() {
 ```js
 // ❌
 function List() {
-	const list = ["item1", "item2", "item3"];
+	const list = ['item1', 'item2', 'item3'];
 
 	return (
 		<ul>
@@ -354,9 +380,9 @@ function List() {
 // ✅
 function List() {
 	const list = [
-		{ id: "111", value: "item1" },
-		{ id: "222", value: "item2" },
-		{ id: "333", value: "item3" },
+		{ id: '111', value: 'item1' },
+		{ id: '222', value: 'item2' },
+		{ id: '333', value: 'item3' },
 	];
 
 	return (
@@ -454,7 +480,7 @@ function Button({ text }) {
 
 function App() {
 	const [cartItems, setCartItems] = useState([]);
-	const [otherState, setOtherState] = useState("");
+	const [otherState, setOtherState] = useState('');
 
 	const addItemToCart = (item) => {
 		setCartItems([...cartItems, item]);
@@ -479,7 +505,7 @@ function App() {
 				))}
 			</ul>
 			<button
-				onClick={() => addItemToCart({ id: Date.now(), name: "Product" })}
+				onClick={() => addItemToCart({ id: Date.now(), name: 'Product' })}
 			>
 				Add to Cart
 			</button>
@@ -504,7 +530,7 @@ function ShoppingCart() {
 				))}
 			</ul>
 			<button
-				onClick={() => addItemToCart({ id: Date.now(), name: "Product" })}
+				onClick={() => addItemToCart({ id: Date.now(), name: 'Product' })}
 			>
 				Add to Cart
 			</button>
@@ -544,8 +570,8 @@ Avoiding huge components and shortening them into smaller, focused components in
 
 ```js
 // ❌
-const [username, setUsername] = useState("");
-const [password, setPassword] = useState("");
+const [username, setUsername] = useState('');
+const [password, setPassword] = useState('');
 
 // ✅
 const [user, setUser] = useState({});
@@ -622,14 +648,14 @@ const sum = arr.reduce((acc, v) => acc + v, 0);
 
 ```js
 // ❌ Avoid single letter names
-const n = "Max";
+const n = 'Max';
 // ✅
-const name = "Max";
+const name = 'Max';
 
 // ❌ Avoid abbreviations
-const sof = "Sunday";
+const sof = 'Sunday';
 // ✅
-const startOfWeek = "Sunday";
+const startOfWeek = 'Sunday';
 
 // ❌ Avoid meaningless names
 const foo = false;
@@ -691,7 +717,7 @@ return (
 
 ```js
 // ❌
-const userName = user.firstName + " " + user.lastName;
+const userName = user.firstName + ' ' + user.lastName;
 
 // ✅
 const userDetails = `${user.firstName} ${user.lastName}`;
