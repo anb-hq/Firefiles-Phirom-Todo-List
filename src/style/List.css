@@ -19,21 +19,21 @@
 	background-color: var(--color-cool-gray);
 }
 
-.task-item.completed .description {
+.task-item.completed .task0-item__description {
 	text-decoration: line-through;
 }
 
-.description {
+.task-item__description {
 	flex-grow: 1;
 	padding: 0.75rem 0;
 	word-break: break-all;
 }
 
-.delete {
+.task-item__delete {
 	margin-left: auto;
 }
 
-.edit-form {
+.task-item__edit-form {
 	margin-right: auto;
 	width: 100%;
 	border: none;

@@ -62,7 +62,7 @@ const List = ({ task, checkIconColor }) => {
 						></i>
 					</span>
 					<input
-						className={`edit-form ${
+						className={`task-item__edit-form ${
 							task.completed ? 'font--gray' : 'font--light-gray'
 						}`}
 						value={editedDescription}
@@ -91,7 +91,7 @@ const List = ({ task, checkIconColor }) => {
 							handleDeleteTask(task.id);
 						}}
 					>
-						<i className="ti ti-circle-x icon--red delete"></i>
+						<i className="ti ti-circle-x icon--red task-item__delete"></i>
 					</span>
 				</>
 			) : (
@@ -105,7 +105,7 @@ const List = ({ task, checkIconColor }) => {
 						></i>
 					</span>
 					<span
-						className={`description ${
+						className={`task-item__description ${
 							task.completed ? 'font--gray' : 'font--light-gray'
 						}`}
 						onClick={() => {
@@ -120,7 +120,7 @@ const List = ({ task, checkIconColor }) => {
 							handleDeleteTask(task.id);
 						}}
 					>
-						<i className="ti ti-circle-x icon--red delete"></i>
+						<i className="ti ti-circle-x icon--red task-item__delete"></i>
 					</span>
 				</>
 			)}
