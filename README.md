@@ -4,7 +4,7 @@
 
 A minimalist Todo app built by a team member of FireFlies, Khim Phirom
 
-**Link to the final product:** 
+**Link to the final product:** https://probable-barnacle-q494ge7.pages.github.io/
 
 
 **Userflow :** 
