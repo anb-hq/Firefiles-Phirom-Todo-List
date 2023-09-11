@@ -24,3 +24,8 @@ A minimalist Todo app built by a team member of FireFlies, Khim Phirom
 **Project Conventions :** https://github.com/anb-hq/Firefiles-Phirom-Todo-List/tree/main/doc
 
 **Figma :** [Minimal Todo](https://www.figma.com/file/XG9JSEqIbhJy702vxHeURA/Minimal-Todo?type=design&node-id=0%3A1&mode=design&t=D108t7PHjfzszUsY-1)
+
+This project would never have been completed without :
+  - The AnB udemy courses I learn everyday.
+  - The fellow AnB students who recommended me to use `Zustand` for React state management.
+Almost Everything else I did is on my own.
